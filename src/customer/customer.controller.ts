@@ -14,14 +14,14 @@ import { CustomerResponseDto } from '@/customer/dtos/response/customer-response.
 import { AuthGuard } from '@nestjs/passport'
 import { CreateCustomerPipe } from '@/customer/pipes/create-customer.pipe'
 
+@UseGuards(AuthGuard('jwt'))
 @UseInterceptors(ClassSerializerInterceptor)
 @Controller('customer')
 export class CustomerController {
     constructor(private readonly customerService: CustomerAbstractService) {}
 
     @Post()
-    @UseGuards(AuthGuard('jwt'))
-    @UsePipes(CreateCustomerPipe)
+    @UsePipes(CreateCustomerPipe) // transforma campos com mascara e valida se alguym dos campos unicos ja existe no banco
     @SerializeOptions({ type: CustomerResponseDto })
     async create(@Body() dto: CreateCustomerRequestDto): Promise<CustomerResponseDto> {
         return await this.customerService.create(dto)

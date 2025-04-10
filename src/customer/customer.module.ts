@@ -8,6 +8,7 @@ import { CustomerService } from '@/customer/service/customer.service'
 
 @Module({
     controllers: [CustomerController],
+    imports: [],
     providers: [
         PrismaService,
         {

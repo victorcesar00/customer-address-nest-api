@@ -13,7 +13,7 @@ interface IPayloadFormat {
 export class JwtStrategy extends PassportStrategy(Strategy) {
     constructor() {
         if (!process.env.JWT_SECRET) {
-            throw new Error('JWT_SECRET is not defined')
+            throw new Error('JWT_SECRET is not defined on environment')
         }
 
         super({

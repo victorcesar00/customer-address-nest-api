@@ -12,6 +12,10 @@ export class CustomerService implements CustomerAbstractService {
         return this.customerRepository.create(data)
     }
 
+    async findById(id: number): Promise<ICustomer | null> {
+        return this.customerRepository.findById(id)
+    }
+
     async findByEmail(email: string): Promise<ICustomer | null> {
         return this.customerRepository.findByEmail(email)
     }

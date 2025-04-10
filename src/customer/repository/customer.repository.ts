@@ -12,6 +12,10 @@ export class CustomerRepository implements CustomerAbstractRepository {
         return await this.prisma.customers.create({ data })
     }
 
+    async findById(id: number): Promise<ICustomer | null> {
+        return await this.prisma.customers.findUnique({ where: { id } })
+    }
+
     async findByEmail(email: string): Promise<ICustomer | null> {
         return await this.prisma.customers.findUnique({ where: { email } })
     }

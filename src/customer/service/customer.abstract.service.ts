@@ -3,6 +3,7 @@ import { CreateCustomerRequestDto } from '@/customer/dtos/request/create-custome
 
 export abstract class CustomerAbstractService {
     abstract create(data: CreateCustomerRequestDto): Promise<ICustomer>
+    abstract findById(id: number): Promise<ICustomer | null>
     abstract findByEmail(email: string): Promise<ICustomer | null>
     abstract findByPhone(phone: string): Promise<ICustomer | null>
     abstract findByTaxPayerId(taxPayerId: string): Promise<ICustomer | null>

@@ -10,7 +10,7 @@ import {
 import { CreateUserRequestDto } from '@/user/dtos/request/create-user-request.dto'
 import { UserResponseDto } from '@/user/dtos/response/user-response.dto'
 import { UserAbstractService } from '@/user/service/user.abstract.service'
-import { UsernameAlreadyExistsPipe } from './pipes/UsernameAlreadyExistsPipe'
+import { UsernameAlreadyExistsPipe } from '@/user/pipes/UsernameAlreadyExists.pipe'
 
 @UseInterceptors(ClassSerializerInterceptor)
 @Controller('user')

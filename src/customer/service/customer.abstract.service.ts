@@ -1,0 +1,9 @@
+import { ICustomer } from '@/customer/customer.interface'
+import { CreateCustomerRequestDto } from '@/customer/dtos/request/create-customer-request.dto'
+
+export abstract class CustomerAbstractService {
+    abstract create(data: CreateCustomerRequestDto): Promise<ICustomer>
+    abstract findByEmail(email: string): Promise<ICustomer | null>
+    abstract findByPhone(phone: string): Promise<ICustomer | null>
+    abstract findByTaxPayerId(taxPayerId: string): Promise<ICustomer | null>
+}

@@ -3,7 +3,7 @@ import { CreateUserRequestDto } from '@/user/dtos/request/create-user-request.dt
 import { UserAbstractService } from '@/user/service/user.abstract.service'
 
 @Injectable()
-export class UsernameAlreadyExistsPipe implements PipeTransform<string | CreateUserRequestDto> {
+export class CreateUserPipe implements PipeTransform<string | CreateUserRequestDto> {
     constructor(private readonly userService: UserAbstractService) {}
 
     async transform(value: string | CreateUserRequestDto) {

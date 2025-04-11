@@ -15,7 +15,7 @@ import { AddressAbstractService } from '@/address/service/address.abstract.servi
 import { AddressResponseDto } from '@/address/dtos/response/address-response.dto'
 import { CreateAddressRequestDto } from '@/address/dtos/request/create-address-request.dto'
 import { AuthGuard } from '@nestjs/passport'
-import { CustomerExistsPipe } from '@/address/pipes/customer-exists.pipe'
+import { CreateAddressPipe } from '@/address/pipes/create-address.pipe'
 
 @UseGuards(AuthGuard('jwt'))
 @UseInterceptors(ClassSerializerInterceptor)
@@ -24,7 +24,7 @@ export class AddressController {
     constructor(private readonly addressService: AddressAbstractService) {}
 
     @Post()
-    @UsePipes(CustomerExistsPipe)
+    @UsePipes(CreateAddressPipe) // Valida se o customerId passado existe
     @SerializeOptions({ type: AddressResponseDto })
     async create(@Body() dto: CreateAddressRequestDto): Promise<AddressResponseDto> {
         return await this.addressService.create(dto)

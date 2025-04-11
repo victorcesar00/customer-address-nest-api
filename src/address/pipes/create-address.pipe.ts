@@ -3,7 +3,7 @@ import { CustomerAbstractService } from '@/customer/service/customer.abstract.se
 import { CreateAddressRequestDto } from '@/address/dtos/request/create-address-request.dto'
 
 @Injectable()
-export class CustomerExistsPipe implements PipeTransform {
+export class CreateAddressPipe implements PipeTransform {
     constructor(private readonly customerService: CustomerAbstractService) {}
 
     async transform(value: CreateAddressRequestDto) {

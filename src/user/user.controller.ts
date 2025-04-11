@@ -10,7 +10,7 @@ import {
 import { CreateUserRequestDto } from '@/user/dtos/request/create-user-request.dto'
 import { UserResponseDto } from '@/user/dtos/response/user-response.dto'
 import { UserAbstractService } from '@/user/service/user.abstract.service'
-import { UsernameAlreadyExistsPipe } from '@/user/pipes/UsernameAlreadyExists.pipe'
+import { CreateUserPipe } from '@/user/pipes/create-user.pipe'
 
 @UseInterceptors(ClassSerializerInterceptor)
 @Controller('user')
@@ -19,7 +19,7 @@ export class UserController {
 
     @Post()
     @SerializeOptions({ type: UserResponseDto })
-    @UsePipes(UsernameAlreadyExistsPipe) // verifica se o usuario ja existe antes de mandar pro handler
+    @UsePipes(CreateUserPipe) // verifica se o usuario ja existe antes de mandar pro handler
     async create(@Body() dto: CreateUserRequestDto): Promise<UserResponseDto> {
         return await this.userService.create(dto)
     }

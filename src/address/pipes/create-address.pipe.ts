@@ -1,18 +1,13 @@
-import { BadRequestException, Injectable, PipeTransform } from '@nestjs/common'
+import { Injectable, PipeTransform } from '@nestjs/common'
 import { CustomerAbstractService } from '@/customer/service/customer.abstract.service'
 import { CreateAddressRequestDto } from '@/address/dtos/request/create-address-request.dto'
+import { CustomerIdExistsPipe } from '@/customer/pipes/customer-id-exists.pipe'
 
 @Injectable()
-export class CreateAddressPipe implements PipeTransform {
+export class CreateAddressPipe implements PipeTransform<CreateAddressRequestDto> {
     constructor(private readonly customerService: CustomerAbstractService) {}
 
-    async transform(value: CreateAddressRequestDto) {
-        const customer = await this.customerService.findById(value.customerId)
-
-        if (!customer) {
-            throw new BadRequestException(`Customer with ID ${value.customerId} does not exist.`)
-        }
-
-        return value
+    async transform(value: CreateAddressRequestDto): Promise<CreateAddressRequestDto> {
+        return (await new CustomerIdExistsPipe(this.customerService).transform(value)) as CreateAddressRequestDto
     }
 }

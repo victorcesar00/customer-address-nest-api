@@ -4,6 +4,7 @@ import { CreateCustomerRequestDto } from '@/customer/dtos/request/create-custome
 import { CustomerAbstractService } from '@/customer/service/customer.abstract.service'
 import { ICustomer } from '@/customer/interfaces/customer.interface'
 import { ICustomerWithAddresses } from '@/customer/interfaces/customer-with-addresses.interface'
+import { UpdateCustomerRequestDto } from '@/customer/dtos/request/update-customer-request.dto'
 
 @Injectable()
 export class CustomerService implements CustomerAbstractService {
@@ -17,6 +18,10 @@ export class CustomerService implements CustomerAbstractService {
         return await this.customerRepository.findById(id)
     }
 
+    async findByIdWithAddresses(id: number): Promise<ICustomerWithAddresses | null> {
+        return await this.customerRepository.findByIdWithAddresses(id)
+    }
+
     async findByEmail(email: string): Promise<ICustomer | null> {
         return await this.customerRepository.findByEmail(email)
     }
@@ -27,5 +32,13 @@ export class CustomerService implements CustomerAbstractService {
 
     async findByTaxPayerId(taxPayerId: string): Promise<ICustomer | null> {
         return await this.customerRepository.findByTaxPayerId(taxPayerId)
+    }
+
+    async update(id: number, data: UpdateCustomerRequestDto): Promise<ICustomer> {
+        return await this.customerRepository.update(id, data)
+    }
+
+    async delete(id: number): Promise<void> {
+        await this.customerRepository.delete(id)
     }
 }

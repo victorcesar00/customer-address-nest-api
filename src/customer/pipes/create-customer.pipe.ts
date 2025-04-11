@@ -19,7 +19,7 @@ export class CreateCustomerPipe implements PipeTransform<CreateCustomerRequestDt
         return body
     }
 
-    private async checksExistence(body: CreateCustomerRequestDto): Promise<void> {
+    private async checkExistence(body: CreateCustomerRequestDto): Promise<void> {
         const errors = []
 
         const [emailExists, phoneExists, taxIdExists] = await Promise.all([
@@ -37,13 +37,13 @@ export class CreateCustomerPipe implements PipeTransform<CreateCustomerRequestDt
         }
     }
 
-    async transform(body: CreateCustomerRequestDto) {
+    async transform(body: CreateCustomerRequestDto): Promise<CreateCustomerRequestDto> {
         if (!body || typeof body !== 'object') {
             throw new BadRequestException('Customer data not provided')
         }
 
         body = this.normalizeFields(body)
-        await this.checksExistence(body)
+        await this.checkExistence(body)
 
         return body
     }

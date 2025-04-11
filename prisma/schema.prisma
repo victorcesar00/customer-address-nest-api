@@ -49,6 +49,6 @@ model addresses {
   updatedAt  DateTime @updatedAt
   deletedAt  DateTime?
 
-  customer     customers @relation(fields: [customerId], references: [id])
+  customer     customers @relation(fields: [customerId], references: [id], onDelete: Cascade)
   customerId   Int
 }

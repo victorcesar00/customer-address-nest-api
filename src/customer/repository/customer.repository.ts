@@ -4,6 +4,7 @@ import { CreateCustomerRequestDto } from '@/customer/dtos/request/create-custome
 import { ICustomer } from '@/customer/interfaces/customer.interface'
 import { PrismaService } from '@/prisma/prisma.service'
 import { ICustomerWithAddresses } from '@/customer/interfaces/customer-with-addresses.interface'
+import { UpdateCustomerRequestDto } from '@/customer/dtos/request/update-customer-request.dto'
 
 @Injectable()
 export class CustomerRepository implements CustomerAbstractRepository {
@@ -22,6 +23,13 @@ export class CustomerRepository implements CustomerAbstractRepository {
         return await this.prisma.customers.findUnique({ where: { id } })
     }
 
+    async findByIdWithAddresses(id: number): Promise<ICustomerWithAddresses | null> {
+        return await this.prisma.customers.findUnique({
+            where: { id },
+            include: { addresses: true }
+        })
+    }
+
     async findByEmail(email: string): Promise<ICustomer | null> {
         return await this.prisma.customers.findUnique({ where: { email } })
     }
@@ -32,5 +40,16 @@ export class CustomerRepository implements CustomerAbstractRepository {
 
     async findByTaxPayerId(taxPayerId: string): Promise<ICustomer | null> {
         return await this.prisma.customers.findUnique({ where: { taxPayerId } })
+    }
+
+    async update(id: number, data: UpdateCustomerRequestDto): Promise<ICustomer> {
+        return await this.prisma.customers.update({
+            where: { id },
+            data
+        })
+    }
+
+    async delete(id: number): Promise<void> {
+        await this.prisma.customers.delete({ where: { id } })
     }
 }

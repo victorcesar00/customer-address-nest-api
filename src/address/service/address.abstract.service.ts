@@ -1,8 +1,10 @@
 import { IAddress } from '@/address/address.interface'
-import { CreateAddressRequestDto } from '@/address/dtos/create-address-request.dto'
+import { CreateAddressRequestDto } from '@/address/dtos/request/create-address-request.dto'
+import { Prisma } from '_/prisma/generated/client'
 
 export abstract class AddressAbstractService {
     abstract create(data: CreateAddressRequestDto): Promise<IAddress>
+    abstract createMany(data: CreateAddressRequestDto[]): Promise<Prisma.BatchPayload>
     abstract findById(id: number): Promise<IAddress | null>
     abstract findAllByCustomer(customerId: number): Promise<IAddress[]>
 }

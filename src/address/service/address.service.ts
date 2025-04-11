@@ -2,21 +2,26 @@ import { Injectable } from '@nestjs/common'
 import { AddressAbstractService } from '@/address/service/address.abstract.service'
 import { AddressAbstractRepository } from '@/address/repository/address.abstract.repository'
 import { IAddress } from '@/address/address.interface'
-import { CreateAddressRequestDto } from '@/address/dtos/create-address-request.dto'
+import { CreateAddressRequestDto } from '@/address/dtos/request/create-address-request.dto'
+import { Prisma } from '_/prisma/generated/client'
 
 @Injectable()
 export class AddressService implements AddressAbstractService {
     constructor(private readonly addressRepository: AddressAbstractRepository) {}
 
     async create(data: CreateAddressRequestDto): Promise<IAddress> {
-        return this.addressRepository.create(data)
+        return await this.addressRepository.create(data)
+    }
+
+    async createMany(data: CreateAddressRequestDto[]): Promise<Prisma.BatchPayload> {
+        return await this.addressRepository.createMany(data)
     }
 
     async findById(id: number): Promise<IAddress | null> {
-        return this.addressRepository.findById(id)
+        return await this.addressRepository.findById(id)
     }
 
     async findAllByCustomer(customerId: number): Promise<IAddress[]> {
-        return this.addressRepository.findAllByCustomer(customerId)
+        return await this.addressRepository.findAllByCustomer(customerId)
     }
 }

@@ -1,5 +1,7 @@
-import { IsEmail, IsEnum, IsNotEmpty, IsString, Length } from 'class-validator'
+import { IsArray, IsEmail, IsEnum, IsNotEmpty, IsOptional, IsString, Length, ValidateNested } from 'class-validator'
 import { GenderEnum } from '_/prisma/generated/client'
+import { Type } from 'class-transformer'
+import { CustomerAddressRequestDto } from '@/address/dtos/request/customer-address-request.dto'
 
 export class CreateCustomerRequestDto {
     @IsString()
@@ -25,4 +27,10 @@ export class CreateCustomerRequestDto {
     @IsNotEmpty()
     @Length(9, 18)
     taxPayerId: string
+
+    @IsOptional()
+    @IsArray()
+    @ValidateNested({ each: true })
+    @Type(() => CustomerAddressRequestDto)
+    addresses?: CustomerAddressRequestDto[]
 }

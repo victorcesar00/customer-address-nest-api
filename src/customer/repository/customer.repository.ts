@@ -9,7 +9,12 @@ export class CustomerRepository implements CustomerAbstractRepository {
     constructor(private readonly prisma: PrismaService) {}
 
     async create(data: CreateCustomerRequestDto): Promise<ICustomer> {
-        return await this.prisma.customers.create({ data })
+        const prismaData = {
+            ...data,
+            addresses: data.addresses ? { create: data.addresses } : undefined
+        }
+
+        return await this.prisma.customers.create({ data: prismaData })
     }
 
     async findById(id: number): Promise<ICustomer | null> {

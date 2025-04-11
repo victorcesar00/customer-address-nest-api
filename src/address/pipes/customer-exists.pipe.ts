@@ -1,6 +1,6 @@
 import { BadRequestException, Injectable, PipeTransform } from '@nestjs/common'
 import { CustomerAbstractService } from '@/customer/service/customer.abstract.service'
-import { CreateAddressRequestDto } from '@/address/dtos/create-address-request.dto'
+import { CreateAddressRequestDto } from '@/address/dtos/request/create-address-request.dto'
 
 @Injectable()
 export class CustomerExistsPipe implements PipeTransform {

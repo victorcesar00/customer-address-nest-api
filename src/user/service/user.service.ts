@@ -11,7 +11,7 @@ export class UserService implements UserAbstractService {
 
     async create(createUserDto: CreateUserRequestDto): Promise<IUser> {
         const passwordHash = await bcrypt.hash(createUserDto.password, 10)
-        return this.userRepository.create({ ...createUserDto, password: passwordHash } as IUser)
+        return await this.userRepository.create({ ...createUserDto, password: passwordHash } as IUser)
     }
 
     async findByUsername(username: string): Promise<IUser | null> {

@@ -1,6 +1,6 @@
-import { IsString, IsNotEmpty, MaxLength, IsInt } from 'class-validator'
+import { IsString, IsNotEmpty, MaxLength } from 'class-validator'
 
-export class CreateAddressRequestDto {
+export class CustomerAddressRequestDto {
     @IsString()
     @IsNotEmpty()
     @MaxLength(85)
@@ -25,8 +25,4 @@ export class CreateAddressRequestDto {
     @IsNotEmpty()
     @MaxLength(10)
     zipCode: string
-
-    @IsInt()
-    @IsNotEmpty()
-    customerId: number
 }

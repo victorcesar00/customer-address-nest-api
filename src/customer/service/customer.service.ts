@@ -9,22 +9,22 @@ export class CustomerService implements CustomerAbstractService {
     constructor(private readonly customerRepository: CustomerAbstractRepository) {}
 
     async create(data: CreateCustomerRequestDto): Promise<ICustomer> {
-        return this.customerRepository.create(data)
+        return await this.customerRepository.create(data)
     }
 
     async findById(id: number): Promise<ICustomer | null> {
-        return this.customerRepository.findById(id)
+        return await this.customerRepository.findById(id)
     }
 
     async findByEmail(email: string): Promise<ICustomer | null> {
-        return this.customerRepository.findByEmail(email)
+        return await this.customerRepository.findByEmail(email)
     }
 
     async findByPhone(phone: string): Promise<ICustomer | null> {
-        return this.customerRepository.findByPhone(phone)
+        return await this.customerRepository.findByPhone(phone)
     }
 
     async findByTaxPayerId(taxPayerId: string): Promise<ICustomer | null> {
-        return this.customerRepository.findByTaxPayerId(taxPayerId)
+        return await this.customerRepository.findByTaxPayerId(taxPayerId)
     }
 }

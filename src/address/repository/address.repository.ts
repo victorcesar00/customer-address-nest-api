@@ -24,4 +24,15 @@ export class AddressRepository implements AddressAbstractRepository {
     async findAllByCustomer(customerId: number): Promise<IAddress[]> {
         return await this.prisma.addresses.findMany({ where: { customerId } })
     }
+
+    async update(id: number, data: Partial<CreateAddressRequestDto>): Promise<IAddress> {
+        return await this.prisma.addresses.update({
+            where: { id },
+            data
+        })
+    }
+
+    async delete(id: number): Promise<void> {
+        await this.prisma.addresses.delete({ where: { id } })
+    }
 }

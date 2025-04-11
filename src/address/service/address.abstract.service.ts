@@ -7,4 +7,6 @@ export abstract class AddressAbstractService {
     abstract createMany(data: CreateAddressRequestDto[]): Promise<Prisma.BatchPayload>
     abstract findById(id: number): Promise<IAddress | null>
     abstract findAllByCustomer(customerId: number): Promise<IAddress[]>
+    abstract update(id: number, data: Partial<CreateAddressRequestDto>): Promise<IAddress>
+    abstract delete(id: number): Promise<void>
 }

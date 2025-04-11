@@ -24,4 +24,12 @@ export class AddressService implements AddressAbstractService {
     async findAllByCustomer(customerId: number): Promise<IAddress[]> {
         return await this.addressRepository.findAllByCustomer(customerId)
     }
+
+    async update(id: number, data: Partial<CreateAddressRequestDto>): Promise<IAddress> {
+        return await this.addressRepository.update(id, data)
+    }
+
+    async delete(id: number): Promise<void> {
+        await this.addressRepository.delete(id)
+    }
 }

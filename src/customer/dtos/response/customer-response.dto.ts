@@ -1,4 +1,4 @@
-import { Exclude, Expose } from 'class-transformer'
+import { Expose } from 'class-transformer'
 import { GenderEnum } from '_/prisma/generated/client'
 
 export class CustomerResponseDto {
@@ -25,7 +25,4 @@ export class CustomerResponseDto {
 
     @Expose()
     updatedAt: Date
-
-    @Exclude()
-    deletedAt?: Date | null
 }

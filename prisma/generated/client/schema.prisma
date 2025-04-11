@@ -30,9 +30,8 @@ model customers {
   gender     GenderEnum
   taxPayerId String     @unique @db.VarChar(18)
 
-  createdAt DateTime  @default(now())
-  updatedAt DateTime  @updatedAt
-  deletedAt DateTime?
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
 
   addresses addresses[]
 }
@@ -45,9 +44,8 @@ model addresses {
   state        String @db.VarChar(170)
   zipCode      String @db.VarChar(10)
 
-  createdAt DateTime  @default(now())
-  updatedAt DateTime  @updatedAt
-  deletedAt DateTime?
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
 
   customer   customers @relation(fields: [customerId], references: [id], onDelete: Cascade)
   customerId Int

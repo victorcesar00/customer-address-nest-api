@@ -2156,7 +2156,6 @@ export namespace Prisma {
     taxPayerId: string | null
     createdAt: Date | null
     updatedAt: Date | null
-    deletedAt: Date | null
   }
 
   export type CustomersMaxAggregateOutputType = {
@@ -2168,7 +2167,6 @@ export namespace Prisma {
     taxPayerId: string | null
     createdAt: Date | null
     updatedAt: Date | null
-    deletedAt: Date | null
   }
 
   export type CustomersCountAggregateOutputType = {
@@ -2180,7 +2178,6 @@ export namespace Prisma {
     taxPayerId: number
     createdAt: number
     updatedAt: number
-    deletedAt: number
     _all: number
   }
 
@@ -2202,7 +2199,6 @@ export namespace Prisma {
     taxPayerId?: true
     createdAt?: true
     updatedAt?: true
-    deletedAt?: true
   }
 
   export type CustomersMaxAggregateInputType = {
@@ -2214,7 +2210,6 @@ export namespace Prisma {
     taxPayerId?: true
     createdAt?: true
     updatedAt?: true
-    deletedAt?: true
   }
 
   export type CustomersCountAggregateInputType = {
@@ -2226,7 +2221,6 @@ export namespace Prisma {
     taxPayerId?: true
     createdAt?: true
     updatedAt?: true
-    deletedAt?: true
     _all?: true
   }
 
@@ -2325,7 +2319,6 @@ export namespace Prisma {
     taxPayerId: string
     createdAt: Date
     updatedAt: Date
-    deletedAt: Date | null
     _count: CustomersCountAggregateOutputType | null
     _avg: CustomersAvgAggregateOutputType | null
     _sum: CustomersSumAggregateOutputType | null
@@ -2356,7 +2349,6 @@ export namespace Prisma {
     taxPayerId?: boolean
     createdAt?: boolean
     updatedAt?: boolean
-    deletedAt?: boolean
     addresses?: boolean | customers$addressesArgs<ExtArgs>
     _count?: boolean | CustomersCountOutputTypeDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["customers"]>
@@ -2370,7 +2362,6 @@ export namespace Prisma {
     taxPayerId?: boolean
     createdAt?: boolean
     updatedAt?: boolean
-    deletedAt?: boolean
   }, ExtArgs["result"]["customers"]>
 
   export type customersSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
@@ -2382,7 +2373,6 @@ export namespace Prisma {
     taxPayerId?: boolean
     createdAt?: boolean
     updatedAt?: boolean
-    deletedAt?: boolean
   }, ExtArgs["result"]["customers"]>
 
   export type customersSelectScalar = {
@@ -2394,10 +2384,9 @@ export namespace Prisma {
     taxPayerId?: boolean
     createdAt?: boolean
     updatedAt?: boolean
-    deletedAt?: boolean
   }
 
-  export type customersOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "name" | "email" | "phone" | "gender" | "taxPayerId" | "createdAt" | "updatedAt" | "deletedAt", ExtArgs["result"]["customers"]>
+  export type customersOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "name" | "email" | "phone" | "gender" | "taxPayerId" | "createdAt" | "updatedAt", ExtArgs["result"]["customers"]>
   export type customersInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     addresses?: boolean | customers$addressesArgs<ExtArgs>
     _count?: boolean | CustomersCountOutputTypeDefaultArgs<ExtArgs>
@@ -2419,7 +2408,6 @@ export namespace Prisma {
       taxPayerId: string
       createdAt: Date
       updatedAt: Date
-      deletedAt: Date | null
     }, ExtArgs["result"]["customers"]>
     composites: {}
   }
@@ -2852,7 +2840,6 @@ export namespace Prisma {
     readonly taxPayerId: FieldRef<"customers", 'String'>
     readonly createdAt: FieldRef<"customers", 'DateTime'>
     readonly updatedAt: FieldRef<"customers", 'DateTime'>
-    readonly deletedAt: FieldRef<"customers", 'DateTime'>
   }
     
 
@@ -3314,7 +3301,6 @@ export namespace Prisma {
     zipCode: string | null
     createdAt: Date | null
     updatedAt: Date | null
-    deletedAt: Date | null
     customerId: number | null
   }
 
@@ -3327,7 +3313,6 @@ export namespace Prisma {
     zipCode: string | null
     createdAt: Date | null
     updatedAt: Date | null
-    deletedAt: Date | null
     customerId: number | null
   }
 
@@ -3340,7 +3325,6 @@ export namespace Prisma {
     zipCode: number
     createdAt: number
     updatedAt: number
-    deletedAt: number
     customerId: number
     _all: number
   }
@@ -3365,7 +3349,6 @@ export namespace Prisma {
     zipCode?: true
     createdAt?: true
     updatedAt?: true
-    deletedAt?: true
     customerId?: true
   }
 
@@ -3378,7 +3361,6 @@ export namespace Prisma {
     zipCode?: true
     createdAt?: true
     updatedAt?: true
-    deletedAt?: true
     customerId?: true
   }
 
@@ -3391,7 +3373,6 @@ export namespace Prisma {
     zipCode?: true
     createdAt?: true
     updatedAt?: true
-    deletedAt?: true
     customerId?: true
     _all?: true
   }
@@ -3491,7 +3472,6 @@ export namespace Prisma {
     zipCode: string
     createdAt: Date
     updatedAt: Date
-    deletedAt: Date | null
     customerId: number
     _count: AddressesCountAggregateOutputType | null
     _avg: AddressesAvgAggregateOutputType | null
@@ -3523,7 +3503,6 @@ export namespace Prisma {
     zipCode?: boolean
     createdAt?: boolean
     updatedAt?: boolean
-    deletedAt?: boolean
     customerId?: boolean
     customer?: boolean | customersDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["addresses"]>
@@ -3537,7 +3516,6 @@ export namespace Prisma {
     zipCode?: boolean
     createdAt?: boolean
     updatedAt?: boolean
-    deletedAt?: boolean
     customerId?: boolean
     customer?: boolean | customersDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["addresses"]>
@@ -3551,7 +3529,6 @@ export namespace Prisma {
     zipCode?: boolean
     createdAt?: boolean
     updatedAt?: boolean
-    deletedAt?: boolean
     customerId?: boolean
     customer?: boolean | customersDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["addresses"]>
@@ -3565,11 +3542,10 @@ export namespace Prisma {
     zipCode?: boolean
     createdAt?: boolean
     updatedAt?: boolean
-    deletedAt?: boolean
     customerId?: boolean
   }
 
-  export type addressesOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "street" | "neighborhood" | "city" | "state" | "zipCode" | "createdAt" | "updatedAt" | "deletedAt" | "customerId", ExtArgs["result"]["addresses"]>
+  export type addressesOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "street" | "neighborhood" | "city" | "state" | "zipCode" | "createdAt" | "updatedAt" | "customerId", ExtArgs["result"]["addresses"]>
   export type addressesInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     customer?: boolean | customersDefaultArgs<ExtArgs>
   }
@@ -3594,7 +3570,6 @@ export namespace Prisma {
       zipCode: string
       createdAt: Date
       updatedAt: Date
-      deletedAt: Date | null
       customerId: number
     }, ExtArgs["result"]["addresses"]>
     composites: {}
@@ -4028,7 +4003,6 @@ export namespace Prisma {
     readonly zipCode: FieldRef<"addresses", 'String'>
     readonly createdAt: FieldRef<"addresses", 'DateTime'>
     readonly updatedAt: FieldRef<"addresses", 'DateTime'>
-    readonly deletedAt: FieldRef<"addresses", 'DateTime'>
     readonly customerId: FieldRef<"addresses", 'Int'>
   }
     
@@ -4477,8 +4451,7 @@ export namespace Prisma {
     gender: 'gender',
     taxPayerId: 'taxPayerId',
     createdAt: 'createdAt',
-    updatedAt: 'updatedAt',
-    deletedAt: 'deletedAt'
+    updatedAt: 'updatedAt'
   };
 
   export type CustomersScalarFieldEnum = (typeof CustomersScalarFieldEnum)[keyof typeof CustomersScalarFieldEnum]
@@ -4493,7 +4466,6 @@ export namespace Prisma {
     zipCode: 'zipCode',
     createdAt: 'createdAt',
     updatedAt: 'updatedAt',
-    deletedAt: 'deletedAt',
     customerId: 'customerId'
   };
 
@@ -4514,14 +4486,6 @@ export namespace Prisma {
   };
 
   export type QueryMode = (typeof QueryMode)[keyof typeof QueryMode]
-
-
-  export const NullsOrder: {
-    first: 'first',
-    last: 'last'
-  };
-
-  export type NullsOrder = (typeof NullsOrder)[keyof typeof NullsOrder]
 
 
   /**
@@ -4668,7 +4632,6 @@ export namespace Prisma {
     taxPayerId?: StringFilter<"customers"> | string
     createdAt?: DateTimeFilter<"customers"> | Date | string
     updatedAt?: DateTimeFilter<"customers"> | Date | string
-    deletedAt?: DateTimeNullableFilter<"customers"> | Date | string | null
     addresses?: AddressesListRelationFilter
   }
 
@@ -4681,7 +4644,6 @@ export namespace Prisma {
     taxPayerId?: SortOrder
     createdAt?: SortOrder
     updatedAt?: SortOrder
-    deletedAt?: SortOrderInput | SortOrder
     addresses?: addressesOrderByRelationAggregateInput
   }
 
@@ -4697,7 +4659,6 @@ export namespace Prisma {
     gender?: EnumGenderEnumFilter<"customers"> | $Enums.GenderEnum
     createdAt?: DateTimeFilter<"customers"> | Date | string
     updatedAt?: DateTimeFilter<"customers"> | Date | string
-    deletedAt?: DateTimeNullableFilter<"customers"> | Date | string | null
     addresses?: AddressesListRelationFilter
   }, "id" | "email" | "phone" | "taxPayerId">
 
@@ -4710,7 +4671,6 @@ export namespace Prisma {
     taxPayerId?: SortOrder
     createdAt?: SortOrder
     updatedAt?: SortOrder
-    deletedAt?: SortOrderInput | SortOrder
     _count?: customersCountOrderByAggregateInput
     _avg?: customersAvgOrderByAggregateInput
     _max?: customersMaxOrderByAggregateInput
@@ -4730,7 +4690,6 @@ export namespace Prisma {
     taxPayerId?: StringWithAggregatesFilter<"customers"> | string
     createdAt?: DateTimeWithAggregatesFilter<"customers"> | Date | string
     updatedAt?: DateTimeWithAggregatesFilter<"customers"> | Date | string
-    deletedAt?: DateTimeNullableWithAggregatesFilter<"customers"> | Date | string | null
   }
 
   export type addressesWhereInput = {
@@ -4745,7 +4704,6 @@ export namespace Prisma {
     zipCode?: StringFilter<"addresses"> | string
     createdAt?: DateTimeFilter<"addresses"> | Date | string
     updatedAt?: DateTimeFilter<"addresses"> | Date | string
-    deletedAt?: DateTimeNullableFilter<"addresses"> | Date | string | null
     customerId?: IntFilter<"addresses"> | number
     customer?: XOR<CustomersScalarRelationFilter, customersWhereInput>
   }
@@ -4759,7 +4717,6 @@ export namespace Prisma {
     zipCode?: SortOrder
     createdAt?: SortOrder
     updatedAt?: SortOrder
-    deletedAt?: SortOrderInput | SortOrder
     customerId?: SortOrder
     customer?: customersOrderByWithRelationInput
   }
@@ -4776,7 +4733,6 @@ export namespace Prisma {
     zipCode?: StringFilter<"addresses"> | string
     createdAt?: DateTimeFilter<"addresses"> | Date | string
     updatedAt?: DateTimeFilter<"addresses"> | Date | string
-    deletedAt?: DateTimeNullableFilter<"addresses"> | Date | string | null
     customerId?: IntFilter<"addresses"> | number
     customer?: XOR<CustomersScalarRelationFilter, customersWhereInput>
   }, "id">
@@ -4790,7 +4746,6 @@ export namespace Prisma {
     zipCode?: SortOrder
     createdAt?: SortOrder
     updatedAt?: SortOrder
-    deletedAt?: SortOrderInput | SortOrder
     customerId?: SortOrder
     _count?: addressesCountOrderByAggregateInput
     _avg?: addressesAvgOrderByAggregateInput
@@ -4811,7 +4766,6 @@ export namespace Prisma {
     zipCode?: StringWithAggregatesFilter<"addresses"> | string
     createdAt?: DateTimeWithAggregatesFilter<"addresses"> | Date | string
     updatedAt?: DateTimeWithAggregatesFilter<"addresses"> | Date | string
-    deletedAt?: DateTimeNullableWithAggregatesFilter<"addresses"> | Date | string | null
     customerId?: IntWithAggregatesFilter<"addresses"> | number
   }
 
@@ -4876,7 +4830,6 @@ export namespace Prisma {
     taxPayerId: string
     createdAt?: Date | string
     updatedAt?: Date | string
-    deletedAt?: Date | string | null
     addresses?: addressesCreateNestedManyWithoutCustomerInput
   }
 
@@ -4889,7 +4842,6 @@ export namespace Prisma {
     taxPayerId: string
     createdAt?: Date | string
     updatedAt?: Date | string
-    deletedAt?: Date | string | null
     addresses?: addressesUncheckedCreateNestedManyWithoutCustomerInput
   }
 
@@ -4901,7 +4853,6 @@ export namespace Prisma {
     taxPayerId?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    deletedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     addresses?: addressesUpdateManyWithoutCustomerNestedInput
   }
 
@@ -4914,7 +4865,6 @@ export namespace Prisma {
     taxPayerId?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    deletedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     addresses?: addressesUncheckedUpdateManyWithoutCustomerNestedInput
   }
 
@@ -4927,7 +4877,6 @@ export namespace Prisma {
     taxPayerId: string
     createdAt?: Date | string
     updatedAt?: Date | string
-    deletedAt?: Date | string | null
   }
 
   export type customersUpdateManyMutationInput = {
@@ -4938,7 +4887,6 @@ export namespace Prisma {
     taxPayerId?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    deletedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   }
 
   export type customersUncheckedUpdateManyInput = {
@@ -4950,7 +4898,6 @@ export namespace Prisma {
     taxPayerId?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    deletedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   }
 
   export type addressesCreateInput = {
@@ -4961,7 +4908,6 @@ export namespace Prisma {
     zipCode: string
     createdAt?: Date | string
     updatedAt?: Date | string
-    deletedAt?: Date | string | null
     customer: customersCreateNestedOneWithoutAddressesInput
   }
 
@@ -4974,7 +4920,6 @@ export namespace Prisma {
     zipCode: string
     createdAt?: Date | string
     updatedAt?: Date | string
-    deletedAt?: Date | string | null
     customerId: number
   }
 
@@ -4986,7 +4931,6 @@ export namespace Prisma {
     zipCode?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    deletedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     customer?: customersUpdateOneRequiredWithoutAddressesNestedInput
   }
 
@@ -4999,7 +4943,6 @@ export namespace Prisma {
     zipCode?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    deletedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     customerId?: IntFieldUpdateOperationsInput | number
   }
 
@@ -5012,7 +4955,6 @@ export namespace Prisma {
     zipCode: string
     createdAt?: Date | string
     updatedAt?: Date | string
-    deletedAt?: Date | string | null
     customerId: number
   }
 
@@ -5024,7 +4966,6 @@ export namespace Prisma {
     zipCode?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    deletedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   }
 
   export type addressesUncheckedUpdateManyInput = {
@@ -5036,7 +4977,6 @@ export namespace Prisma {
     zipCode?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    deletedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     customerId?: IntFieldUpdateOperationsInput | number
   }
 
@@ -5164,26 +5104,10 @@ export namespace Prisma {
     not?: NestedEnumGenderEnumFilter<$PrismaModel> | $Enums.GenderEnum
   }
 
-  export type DateTimeNullableFilter<$PrismaModel = never> = {
-    equals?: Date | string | DateTimeFieldRefInput<$PrismaModel> | null
-    in?: Date[] | string[] | ListDateTimeFieldRefInput<$PrismaModel> | null
-    notIn?: Date[] | string[] | ListDateTimeFieldRefInput<$PrismaModel> | null
-    lt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    lte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    gt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    gte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    not?: NestedDateTimeNullableFilter<$PrismaModel> | Date | string | null
-  }
-
   export type AddressesListRelationFilter = {
     every?: addressesWhereInput
     some?: addressesWhereInput
     none?: addressesWhereInput
-  }
-
-  export type SortOrderInput = {
-    sort: SortOrder
-    nulls?: NullsOrder
   }
 
   export type addressesOrderByRelationAggregateInput = {
@@ -5199,7 +5123,6 @@ export namespace Prisma {
     taxPayerId?: SortOrder
     createdAt?: SortOrder
     updatedAt?: SortOrder
-    deletedAt?: SortOrder
   }
 
   export type customersAvgOrderByAggregateInput = {
@@ -5215,7 +5138,6 @@ export namespace Prisma {
     taxPayerId?: SortOrder
     createdAt?: SortOrder
     updatedAt?: SortOrder
-    deletedAt?: SortOrder
   }
 
   export type customersMinOrderByAggregateInput = {
@@ -5227,7 +5149,6 @@ export namespace Prisma {
     taxPayerId?: SortOrder
     createdAt?: SortOrder
     updatedAt?: SortOrder
-    deletedAt?: SortOrder
   }
 
   export type customersSumOrderByAggregateInput = {
@@ -5244,20 +5165,6 @@ export namespace Prisma {
     _max?: NestedEnumGenderEnumFilter<$PrismaModel>
   }
 
-  export type DateTimeNullableWithAggregatesFilter<$PrismaModel = never> = {
-    equals?: Date | string | DateTimeFieldRefInput<$PrismaModel> | null
-    in?: Date[] | string[] | ListDateTimeFieldRefInput<$PrismaModel> | null
-    notIn?: Date[] | string[] | ListDateTimeFieldRefInput<$PrismaModel> | null
-    lt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    lte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    gt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    gte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    not?: NestedDateTimeNullableWithAggregatesFilter<$PrismaModel> | Date | string | null
-    _count?: NestedIntNullableFilter<$PrismaModel>
-    _min?: NestedDateTimeNullableFilter<$PrismaModel>
-    _max?: NestedDateTimeNullableFilter<$PrismaModel>
-  }
-
   export type CustomersScalarRelationFilter = {
     is?: customersWhereInput
     isNot?: customersWhereInput
@@ -5272,7 +5179,6 @@ export namespace Prisma {
     zipCode?: SortOrder
     createdAt?: SortOrder
     updatedAt?: SortOrder
-    deletedAt?: SortOrder
     customerId?: SortOrder
   }
 
@@ -5290,7 +5196,6 @@ export namespace Prisma {
     zipCode?: SortOrder
     createdAt?: SortOrder
     updatedAt?: SortOrder
-    deletedAt?: SortOrder
     customerId?: SortOrder
   }
 
@@ -5303,7 +5208,6 @@ export namespace Prisma {
     zipCode?: SortOrder
     createdAt?: SortOrder
     updatedAt?: SortOrder
-    deletedAt?: SortOrder
     customerId?: SortOrder
   }
 
@@ -5344,10 +5248,6 @@ export namespace Prisma {
 
   export type EnumGenderEnumFieldUpdateOperationsInput = {
     set?: $Enums.GenderEnum
-  }
-
-  export type NullableDateTimeFieldUpdateOperationsInput = {
-    set?: Date | string | null
   }
 
   export type addressesUpdateManyWithoutCustomerNestedInput = {
@@ -5493,17 +5393,6 @@ export namespace Prisma {
     not?: NestedEnumGenderEnumFilter<$PrismaModel> | $Enums.GenderEnum
   }
 
-  export type NestedDateTimeNullableFilter<$PrismaModel = never> = {
-    equals?: Date | string | DateTimeFieldRefInput<$PrismaModel> | null
-    in?: Date[] | string[] | ListDateTimeFieldRefInput<$PrismaModel> | null
-    notIn?: Date[] | string[] | ListDateTimeFieldRefInput<$PrismaModel> | null
-    lt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    lte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    gt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    gte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    not?: NestedDateTimeNullableFilter<$PrismaModel> | Date | string | null
-  }
-
   export type NestedEnumGenderEnumWithAggregatesFilter<$PrismaModel = never> = {
     equals?: $Enums.GenderEnum | EnumGenderEnumFieldRefInput<$PrismaModel>
     in?: $Enums.GenderEnum[] | ListEnumGenderEnumFieldRefInput<$PrismaModel>
@@ -5514,31 +5403,6 @@ export namespace Prisma {
     _max?: NestedEnumGenderEnumFilter<$PrismaModel>
   }
 
-  export type NestedDateTimeNullableWithAggregatesFilter<$PrismaModel = never> = {
-    equals?: Date | string | DateTimeFieldRefInput<$PrismaModel> | null
-    in?: Date[] | string[] | ListDateTimeFieldRefInput<$PrismaModel> | null
-    notIn?: Date[] | string[] | ListDateTimeFieldRefInput<$PrismaModel> | null
-    lt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    lte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    gt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    gte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    not?: NestedDateTimeNullableWithAggregatesFilter<$PrismaModel> | Date | string | null
-    _count?: NestedIntNullableFilter<$PrismaModel>
-    _min?: NestedDateTimeNullableFilter<$PrismaModel>
-    _max?: NestedDateTimeNullableFilter<$PrismaModel>
-  }
-
-  export type NestedIntNullableFilter<$PrismaModel = never> = {
-    equals?: number | IntFieldRefInput<$PrismaModel> | null
-    in?: number[] | ListIntFieldRefInput<$PrismaModel> | null
-    notIn?: number[] | ListIntFieldRefInput<$PrismaModel> | null
-    lt?: number | IntFieldRefInput<$PrismaModel>
-    lte?: number | IntFieldRefInput<$PrismaModel>
-    gt?: number | IntFieldRefInput<$PrismaModel>
-    gte?: number | IntFieldRefInput<$PrismaModel>
-    not?: NestedIntNullableFilter<$PrismaModel> | number | null
-  }
-
   export type addressesCreateWithoutCustomerInput = {
     street: string
     neighborhood: string
@@ -5547,7 +5411,6 @@ export namespace Prisma {
     zipCode: string
     createdAt?: Date | string
     updatedAt?: Date | string
-    deletedAt?: Date | string | null
   }
 
   export type addressesUncheckedCreateWithoutCustomerInput = {
@@ -5559,7 +5422,6 @@ export namespace Prisma {
     zipCode: string
     createdAt?: Date | string
     updatedAt?: Date | string
-    deletedAt?: Date | string | null
   }
 
   export type addressesCreateOrConnectWithoutCustomerInput = {
@@ -5600,7 +5462,6 @@ export namespace Prisma {
     zipCode?: StringFilter<"addresses"> | string
     createdAt?: DateTimeFilter<"addresses"> | Date | string
     updatedAt?: DateTimeFilter<"addresses"> | Date | string
-    deletedAt?: DateTimeNullableFilter<"addresses"> | Date | string | null
     customerId?: IntFilter<"addresses"> | number
   }
 
@@ -5612,7 +5473,6 @@ export namespace Prisma {
     taxPayerId: string
     createdAt?: Date | string
     updatedAt?: Date | string
-    deletedAt?: Date | string | null
   }
 
   export type customersUncheckedCreateWithoutAddressesInput = {
@@ -5624,7 +5484,6 @@ export namespace Prisma {
     taxPayerId: string
     createdAt?: Date | string
     updatedAt?: Date | string
-    deletedAt?: Date | string | null
   }
 
   export type customersCreateOrConnectWithoutAddressesInput = {
@@ -5651,7 +5510,6 @@ export namespace Prisma {
     taxPayerId?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    deletedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   }
 
   export type customersUncheckedUpdateWithoutAddressesInput = {
@@ -5663,7 +5521,6 @@ export namespace Prisma {
     taxPayerId?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    deletedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   }
 
   export type addressesCreateManyCustomerInput = {
@@ -5675,7 +5532,6 @@ export namespace Prisma {
     zipCode: string
     createdAt?: Date | string
     updatedAt?: Date | string
-    deletedAt?: Date | string | null
   }
 
   export type addressesUpdateWithoutCustomerInput = {
@@ -5686,7 +5542,6 @@ export namespace Prisma {
     zipCode?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    deletedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   }
 
   export type addressesUncheckedUpdateWithoutCustomerInput = {
@@ -5698,7 +5553,6 @@ export namespace Prisma {
     zipCode?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    deletedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   }
 
   export type addressesUncheckedUpdateManyWithoutCustomerInput = {
@@ -5710,7 +5564,6 @@ export namespace Prisma {
     zipCode?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    deletedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   }
 
 

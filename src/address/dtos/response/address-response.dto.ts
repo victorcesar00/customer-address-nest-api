@@ -1,4 +1,4 @@
-import { Exclude, Expose } from 'class-transformer'
+import { Expose } from 'class-transformer'
 
 export class AddressResponseDto {
     @Expose()
@@ -27,7 +27,4 @@ export class AddressResponseDto {
 
     @Expose()
     updatedAt: Date
-
-    @Exclude()
-    deletedAt?: Date | null
 }

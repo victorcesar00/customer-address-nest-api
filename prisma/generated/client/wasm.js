@@ -133,8 +133,7 @@ exports.Prisma.CustomersScalarFieldEnum = {
   gender: 'gender',
   taxPayerId: 'taxPayerId',
   createdAt: 'createdAt',
-  updatedAt: 'updatedAt',
-  deletedAt: 'deletedAt'
+  updatedAt: 'updatedAt'
 };
 
 exports.Prisma.AddressesScalarFieldEnum = {
@@ -146,7 +145,6 @@ exports.Prisma.AddressesScalarFieldEnum = {
   zipCode: 'zipCode',
   createdAt: 'createdAt',
   updatedAt: 'updatedAt',
-  deletedAt: 'deletedAt',
   customerId: 'customerId'
 };
 
@@ -158,11 +156,6 @@ exports.Prisma.SortOrder = {
 exports.Prisma.QueryMode = {
   default: 'default',
   insensitive: 'insensitive'
-};
-
-exports.Prisma.NullsOrder = {
-  first: 'first',
-  last: 'last'
 };
 exports.GenderEnum = exports.$Enums.GenderEnum = {
   MALE: 'MALE',

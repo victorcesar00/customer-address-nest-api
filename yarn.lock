@@ -1231,11 +1231,6 @@
   dependencies:
     consola "^3.2.3"
 
-"@open-draft/deferred-promise@^2.1.0":
-  version "2.2.0"
-  resolved "https://registry.yarnpkg.com/@open-draft/deferred-promise/-/deferred-promise-2.2.0.tgz#4a822d10f6f0e316be4d67b4d4f8c9a124b073bd"
-  integrity sha512-CecwLWx3rhxVQF6V4bAgPS5t+So2sTbPgAzafKkVizyi7tlwpcFpdFqq+wqF2OwNBmqFuu6tOyouTuxgpMfzmA==
-
 "@pkgr/core@^0.2.1":
   version "0.2.2"
   resolved "https://registry.yarnpkg.com/@pkgr/core/-/core-0.2.2.tgz#224e466468489466a3ca77832be80cdd0bb8e523"
@@ -5155,21 +5150,6 @@ pretty-format@^29.0.0, pretty-format@^29.7.0:
     "@jest/schemas" "^29.6.3"
     ansi-styles "^5.0.0"
     react-is "^18.0.0"
-
-prisma-extension-nested-operations@^1.0.1:
-  version "1.0.1"
-  resolved "https://registry.yarnpkg.com/prisma-extension-nested-operations/-/prisma-extension-nested-operations-1.0.1.tgz#d7e3febfc7f7470d6a9c358d9ae7e78098afd17b"
-  integrity sha512-mjMfVUplwCkrdClTqRP4793dOdPfT/H0zvV2uQ2R1BG2ZAqJ4LUEf//7f9LJdV5GhSOhp72w6b7DKJg1xIkgVA==
-  dependencies:
-    "@open-draft/deferred-promise" "^2.1.0"
-    lodash "^4.17.21"
-
-prisma-extension-soft-delete@^2.0.1:
-  version "2.0.1"
-  resolved "https://registry.yarnpkg.com/prisma-extension-soft-delete/-/prisma-extension-soft-delete-2.0.1.tgz#1e39496513028738f939148bee090b8d00201055"
-  integrity sha512-vozIlrmUr2RWgXNjWBn6yHWAZ4hBjskyJM0TCH66jKjkeGf8jfLhrIyO0FB4JlPMtuNeyyFVOVIg8yEjxbQH9Q==
-  dependencies:
-    prisma-extension-nested-operations "^1.0.1"
 
 prisma@^6.6.0:
   version "6.6.0"

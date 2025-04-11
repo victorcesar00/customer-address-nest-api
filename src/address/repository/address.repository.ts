@@ -14,7 +14,7 @@ export class AddressRepository implements AddressAbstractRepository {
     }
 
     async createMany(data: CreateAddressRequestDto[]): Promise<Prisma.BatchPayload> {
-        return await this.prisma.addresses.createMany({ data })
+        return await this.prisma.addresses.createMany({ data, skipDuplicates: true })
     }
 
     async findById(id: number): Promise<IAddress | null> {

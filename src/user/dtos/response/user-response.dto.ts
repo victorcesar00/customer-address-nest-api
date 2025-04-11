@@ -8,7 +8,7 @@ export class UserResponseDto {
     username: string
 
     @Exclude()
-    password: string
+    password?: string
 
     @Expose()
     createdAt: Date

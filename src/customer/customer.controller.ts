@@ -21,7 +21,7 @@ export class CustomerController {
     constructor(private readonly customerService: CustomerAbstractService) {}
 
     @Post()
-    @UsePipes(CreateCustomerPipe) // transforma campos com mascara e valida se alguym dos campos unicos ja existe no banco
+    @UsePipes(CreateCustomerPipe) // transforma campos com mascara e valida se algum dos campos unicos ja existe no banco
     @SerializeOptions({ type: CustomerResponseDto })
     async create(@Body() dto: CreateCustomerRequestDto): Promise<CustomerResponseDto> {
         return await this.customerService.create(dto)

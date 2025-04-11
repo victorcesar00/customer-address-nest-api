@@ -1,22 +1,21 @@
 import { Injectable } from '@nestjs/common'
 import { CustomerAbstractRepository } from '@/customer/repository/customer.abstract.repository'
 import { CreateCustomerRequestDto } from '@/customer/dtos/request/create-customer-request.dto'
-import { ICustomer } from '@/customer/customer.interface'
+import { ICustomer } from '@/customer/interfaces/customer.interface'
 import { PrismaService } from '@/prisma/prisma.service'
+import { ICustomerWithAddresses } from '@/customer/interfaces/customer-with-addresses.interface'
 
 @Injectable()
 export class CustomerRepository implements CustomerAbstractRepository {
     constructor(private readonly prisma: PrismaService) {}
 
-    async create(data: CreateCustomerRequestDto): Promise<ICustomer> {
+    async create(data: CreateCustomerRequestDto): Promise<ICustomerWithAddresses> {
         const prismaData = {
             ...data,
             addresses: data.addresses ? { create: data.addresses } : undefined
         }
 
-        const retorno = await this.prisma.customers.create({ data: prismaData })
-
-        return retorno
+        return await this.prisma.customers.create({ data: prismaData, include: { addresses: true } })
     }
 
     async findById(id: number): Promise<ICustomer | null> {

@@ -2,13 +2,14 @@ import { Injectable } from '@nestjs/common'
 import { CustomerAbstractRepository } from '@/customer/repository/customer.abstract.repository'
 import { CreateCustomerRequestDto } from '@/customer/dtos/request/create-customer-request.dto'
 import { CustomerAbstractService } from '@/customer/service/customer.abstract.service'
-import { ICustomer } from '@/customer/customer.interface'
+import { ICustomer } from '@/customer/interfaces/customer.interface'
+import { ICustomerWithAddresses } from '@/customer/interfaces/customer-with-addresses.interface'
 
 @Injectable()
 export class CustomerService implements CustomerAbstractService {
     constructor(private readonly customerRepository: CustomerAbstractRepository) {}
 
-    async create(data: CreateCustomerRequestDto): Promise<ICustomer> {
+    async create(data: CreateCustomerRequestDto): Promise<ICustomerWithAddresses> {
         return await this.customerRepository.create(data)
     }
 

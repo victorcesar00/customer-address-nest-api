@@ -8,5 +8,5 @@ export interface IAddress {
     customerId: number
     createdAt: Date
     updatedAt: Date
-    deletedAt: Date | null
+    deletedAt?: Date | null
 }

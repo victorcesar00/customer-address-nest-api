@@ -14,7 +14,9 @@ export class CustomerRepository implements CustomerAbstractRepository {
             addresses: data.addresses ? { create: data.addresses } : undefined
         }
 
-        return await this.prisma.customers.create({ data: prismaData })
+        const retorno = await this.prisma.customers.create({ data: prismaData })
+
+        return retorno
     }
 
     async findById(id: number): Promise<ICustomer | null> {

@@ -6,6 +6,7 @@ import { CreateCustomerRequestDto } from '@/customer/dtos/request/create-custome
 import { UpdateCustomerRequestDto } from '@/customer/dtos/request/update-customer-request.dto'
 import { CustomerResponseDto } from '@/customer/dtos/response/customer-response.dto'
 import { CustomerWithAddressesResponseDto } from '@/customer/dtos/response/customer-with-adddresses-response.dto'
+import { GenderEnum } from '_/prisma/generated/client'
 
 describe('CustomerController', () => {
     let controller: CustomerController
@@ -77,7 +78,7 @@ describe('CustomerController', () => {
                 name: 'Testeson',
                 email: 'testeson@email.com',
                 phone: '31999999999',
-                gender: 'MALE',
+                gender: GenderEnum.MALE,
                 taxPayerId: '123.456.789-00',
                 createdAt: new Date(),
                 updatedAt: new Date(),

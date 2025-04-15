@@ -12,8 +12,7 @@ import {
     UseGuards,
     UsePipes,
     ParseIntPipe,
-    HttpCode,
-    NotFoundException
+    HttpCode
 } from '@nestjs/common'
 import { CustomerAbstractService } from '@/customer/service/customer.abstract.service'
 import { CreateCustomerRequestDto } from '@/customer/dtos/request/create-customer-request.dto'
@@ -41,13 +40,7 @@ export class CustomerController {
     @Get(':id')
     @SerializeOptions({ type: CustomerResponseDto })
     async findOne(@Param('id', ParseIntPipe) id: number): Promise<CustomerResponseDto | null> {
-        const customer = await this.customerService.findById(id)
-
-        if (!customer) {
-            throw new NotFoundException(`Customer with id ${id} doesn't exist`)
-        }
-
-        return customer
+        return await this.customerService.findById(id)
     }
 
     @Get('with-addresses/:id')
@@ -55,13 +48,7 @@ export class CustomerController {
     async findOneWithAddresses(
         @Param('id', ParseIntPipe) id: number
     ): Promise<CustomerWithAddressesResponseDto | null> {
-        const customer = await this.customerService.findByIdWithAddresses(id)
-
-        if (!customer) {
-            throw new NotFoundException(`Customer with id ${id} doesn't exist`)
-        }
-
-        return customer
+        return await this.customerService.findByIdWithAddresses(id)
     }
 
     @Patch(':id')

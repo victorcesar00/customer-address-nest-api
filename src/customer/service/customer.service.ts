@@ -1,4 +1,4 @@
-import { Injectable } from '@nestjs/common'
+import { Injectable, NotFoundException } from '@nestjs/common'
 import { CustomerAbstractRepository } from '@/customer/repository/customer.abstract.repository'
 import { CreateCustomerRequestDto } from '@/customer/dtos/request/create-customer-request.dto'
 import { CustomerAbstractService } from '@/customer/service/customer.abstract.service'
@@ -15,11 +15,23 @@ export class CustomerService implements CustomerAbstractService {
     }
 
     async findById(id: number): Promise<ICustomer | null> {
-        return await this.customerRepository.findById(id)
+        const customer = await this.customerRepository.findById(id)
+
+        if (!customer) {
+            throw new NotFoundException(`Customer with id ${id} doesn't exist`)
+        }
+
+        return customer
     }
 
     async findByIdWithAddresses(id: number): Promise<ICustomerWithAddresses | null> {
-        return await this.customerRepository.findByIdWithAddresses(id)
+        const customer = await this.customerRepository.findByIdWithAddresses(id)
+
+        if (!customer) {
+            throw new NotFoundException(`Customer with id ${id} doesn't exist`)
+        }
+
+        return customer
     }
 
     async findByEmail(email: string): Promise<ICustomer | null> {

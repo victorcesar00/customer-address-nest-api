@@ -3,7 +3,6 @@ import {
     Controller,
     Get,
     Param,
-    ParseIntPipe,
     Post,
     UseGuards,
     UseInterceptors,
@@ -36,8 +35,9 @@ export class AddressController {
     }
 
     @Get('customer/:customerId')
+    @UsePipes(CustomerIdExistsPipe)
     @SerializeOptions({ type: AddressResponseDto })
-    async findAllByCustomer(@Param('customerId', ParseIntPipe) customerId: number): Promise<AddressResponseDto[]> {
+    async findAllByCustomer(@Param('customerId') customerId: number): Promise<AddressResponseDto[]> {
         return await this.addressService.findAllByCustomer(customerId)
     }
 

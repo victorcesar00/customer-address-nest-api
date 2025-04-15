@@ -17,8 +17,8 @@
     "test:watch": "jest --watch",
     "test:cov": "jest --coverage",
     "test:debug": "node --inspect-brk -r tsconfig-paths/register -r ts-node/register node_modules/.bin/jest --runInBand",
-    "test:e2e": "env-cmd -f .env.test -- jest --config ./test/jest-e2e.json",
-    "test:e2e-watch": "env-cmd -f .env.test -- jest --config ./test/jest-e2e.json --watch",
+    "test:e2e": "env-cmd -f .env.test -- jest --config ./test/jest-e2e.json --runInBand",
+    "test:e2e-watch": "env-cmd -f .env.test -- jest --config ./test/jest-e2e.json --watch --runInBand",
     "prisma:test:migrate": "env-cmd -f .env.test yarn prisma migrate dev",
     "postinstall": "prisma generate"
   },

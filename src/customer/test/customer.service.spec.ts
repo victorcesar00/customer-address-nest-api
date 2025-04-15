@@ -5,6 +5,7 @@ import { CreateCustomerRequestDto } from '@/customer/dtos/request/create-custome
 import { UpdateCustomerRequestDto } from '@/customer/dtos/request/update-customer-request.dto'
 import { ICustomer } from '@/customer/interfaces/customer.interface'
 import { ICustomerWithAddresses } from '@/customer/interfaces/customer-with-addresses.interface'
+import { GenderEnum } from '_/prisma/generated/client'
 
 describe('CustomerService', () => {
     let service: CustomerService
@@ -79,7 +80,7 @@ describe('CustomerService', () => {
                 name: 'Testeson',
                 email: 'testeson@email.com',
                 phone: '31999999999',
-                gender: 'MALE',
+                gender: GenderEnum.MALE,
                 taxPayerId: '12345678900',
                 addresses: [],
                 createdAt: new Date(),

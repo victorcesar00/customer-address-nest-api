@@ -6,7 +6,7 @@ export class CustomerIdExistsPipe implements PipeTransform<object | number> {
     constructor(private readonly customerService: CustomerAbstractService) {}
 
     private async validateCustomerId(value: unknown): Promise<number> {
-        if (!value || value === null) {
+        if (value === undefined || value === null || value === '') {
             throw new BadRequestException('Customer id not provided')
         }
 
@@ -22,6 +22,10 @@ export class CustomerIdExistsPipe implements PipeTransform<object | number> {
 
         const parsedId = await new ParseIntPipe().transform(id as string, { type: 'param' })
 
+        if (parsedId < 1) {
+            throw new BadRequestException('Invalid id provided')
+        }
+
         return parsedId
     }
 
@@ -31,7 +35,7 @@ export class CustomerIdExistsPipe implements PipeTransform<object | number> {
         const customer = await this.customerService.findById(validatedId)
 
         if (!customer) {
-            throw new NotFoundException(`Customer with ID ${validatedId} does not exist.`)
+            throw new NotFoundException(`Customer with ID ${validatedId} does not exist`)
         }
 
         return typeof value === 'object' ? { ...value, customerId: validatedId } : validatedId

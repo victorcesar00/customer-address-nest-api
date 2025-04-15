@@ -5,6 +5,7 @@ import { CreateCustomerRequestDto } from '@/customer/dtos/request/create-custome
 import { UpdateCustomerRequestDto } from '@/customer/dtos/request/update-customer-request.dto'
 import { ICustomer } from '@/customer/interfaces/customer.interface'
 import { ICustomerWithAddresses } from '@/customer/interfaces/customer-with-addresses.interface'
+import { GenderEnum } from '_/prisma/generated/client'
 
 describe('CustomerRepository', () => {
     let repository: CustomerRepository
@@ -38,10 +39,10 @@ describe('CustomerRepository', () => {
 
     it('should create customer with addresses', async () => {
         const dto = {
-            name: 'João',
-            email: 'joao@example.com',
+            name: 'Testeson',
+            email: 'testeson@example.com',
             phone: '31999999999',
-            gender: 'MALE',
+            gender: GenderEnum.MALE,
             taxPayerId: '12345678900',
             addresses: [
                 {
@@ -97,7 +98,7 @@ describe('CustomerRepository', () => {
             name: 'Testeson',
             email: 'testeson@email.com',
             phone: '31999999999',
-            gender: 'MALE',
+            gender: GenderEnum.MALE,
             taxPayerId: '12345678900',
             createdAt: new Date(),
             updatedAt: new Date()
@@ -117,7 +118,7 @@ describe('CustomerRepository', () => {
             name: 'Testeson',
             email: 'testeson@email.com',
             phone: '31999999999',
-            gender: 'MALE',
+            gender: GenderEnum.MALE,
             taxPayerId: '12345678900',
             addresses: [],
             createdAt: new Date(),

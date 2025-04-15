@@ -5,12 +5,16 @@ import { AddressAbstractService } from '@/address/service/address.abstract.servi
 export class AddressIdExistsPipe implements PipeTransform<number> {
     constructor(private readonly addressService: AddressAbstractService) {}
 
-    private async validateAddressId(value: unknown): Promise<number> {
-        if (!value || value === null) {
+    private async validateAddressId(value: string | number): Promise<number> {
+        if (value === undefined || value === null || value === '') {
             throw new BadRequestException('Address id not provided')
         }
 
         const parsedId = await new ParseIntPipe().transform(value as string, { type: 'param' })
+
+        if (parsedId < 1) {
+            throw new BadRequestException('Invalid id provided')
+        }
 
         return parsedId
     }

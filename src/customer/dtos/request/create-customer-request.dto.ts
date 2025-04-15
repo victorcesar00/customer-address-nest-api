@@ -16,7 +16,7 @@ export class CreateCustomerRequestDto {
 
     @IsString()
     @IsNotEmpty()
-    @Length(8, 15)
+    @Length(8, 20)
     phone: string
 
     @IsNotEmpty()
@@ -25,7 +25,7 @@ export class CreateCustomerRequestDto {
 
     @IsString()
     @IsNotEmpty()
-    @Length(9, 18)
+    @Length(9, 20)
     taxPayerId: string
 
     @IsOptional()

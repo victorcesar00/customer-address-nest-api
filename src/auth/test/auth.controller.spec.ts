@@ -30,7 +30,7 @@ describe('AuthController', () => {
     describe('login', () => {
         it('should return access token for valid credentials', async () => {
             const dto: LoginRequestDto = {
-                username: 'john',
+                username: 'testeson',
                 password: '123456'
             }
 

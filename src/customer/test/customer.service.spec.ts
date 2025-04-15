@@ -42,14 +42,14 @@ describe('CustomerService', () => {
     describe('create', () => {
         it('should create customer with addresses', async () => {
             const dto = {
-                name: 'John',
-                addresses: [{ street: 'Main St' }]
+                name: 'testeson',
+                addresses: [{ street: 'Rua Principal' }]
             } as CreateCustomerRequestDto
 
             const created = {
                 id: 1,
                 ...dto,
-                addresses: [{ id: 1, street: 'Main St' }]
+                addresses: [{ id: 1, street: 'Rua Principal' }]
             } as ICustomerWithAddresses
 
             repoMock.create.mockResolvedValue(created)

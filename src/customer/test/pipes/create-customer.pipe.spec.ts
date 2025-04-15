@@ -62,7 +62,7 @@ describe('CreateCustomerPipe', () => {
         const dto: CreateCustomerRequestDto = {
             name: 'testeson',
             email: 'testeson@example.com',
-            phone: '+31 (987) 654-321',
+            phone: '+55 (31) 98765-4321',
             gender: GenderEnum.MALE,
             taxPayerId: '12.345.678/901'
         }
@@ -73,7 +73,7 @@ describe('CreateCustomerPipe', () => {
 
         const result = await pipe.transform(dto)
 
-        expect(result.phone).toBe('+31987654321')
+        expect(result.phone).toBe('+5531987654321')
         expect(result.taxPayerId).toBe('12345678901')
     })
 

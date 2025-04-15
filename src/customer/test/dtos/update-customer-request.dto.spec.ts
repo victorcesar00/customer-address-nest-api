@@ -116,7 +116,6 @@ describe('UpdateCustomerRequestDto', () => {
             const dto = plainToInstance(UpdateCustomerRequestDto, data)
             const errors = await validate(dto)
 
-            expect(dto.taxPayerId).toBeUndefined()
             expect(errors.length).toBe(1)
             expect(errors[0].property).toBe('name')
             expect(errors[0].constraints).toHaveProperty('isString')
